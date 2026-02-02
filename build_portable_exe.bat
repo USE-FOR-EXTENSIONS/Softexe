@@ -77,10 +77,10 @@ pyinstaller --noconfirm --onefile --windowed ^
   --hidden-import=PyQt5.QtGui ^
   --hidden-import=PyQt5.QtWidgets ^
   --hidden-import=PyQt5.QtNetwork ^
-  --add-data "config.py;." ^
-  --add-data "data;data" ^
-  --add-data "logs;logs" ^
-  --add-data "reports;reports" ^
+    --add-data "%~dp0config.py;." ^
+    --add-data "%~dp0data;data" ^
+    --add-data "%~dp0logs;logs" ^
+    --add-data "%~dp0reports;reports" ^
   --distpath "dist" ^
     --workpath "build_temp" ^
   --specpath "build_spec" ^
@@ -92,21 +92,21 @@ if errorlevel 1 (
     echo WARNING: One-file build attempt had issues, trying directory mode...
     echo.
     
-        pyinstaller --noconfirm --onedir --windowed ^
-      --name "TradeMirrorApp" ^
-      --hidden-import=PyQt5.sip ^
-      --hidden-import=PyQt5.QtCore ^
-      --hidden-import=PyQt5.QtGui ^
-      --hidden-import=PyQt5.QtWidgets ^
-            --add-data "config.py;." ^
-      --add-data "data;data" ^
-      --add-data "logs;logs" ^
-      --add-data "reports;reports" ^
-      --distpath "dist" ^
+          pyinstaller --noconfirm --onedir --windowed ^
+        --name "TradeMirrorApp" ^
+        --hidden-import=PyQt5.sip ^
+        --hidden-import=PyQt5.QtCore ^
+        --hidden-import=PyQt5.QtGui ^
+        --hidden-import=PyQt5.QtWidgets ^
+            --add-data "%~dp0config.py;." ^
+        --add-data "%~dp0data;data" ^
+        --add-data "%~dp0logs;logs" ^
+        --add-data "%~dp0reports;reports" ^
+        --distpath "dist" ^
             --workpath "build_temp" ^
-      --specpath "build_spec" ^
-      --collect-all PyQt5 ^
-      main.py
+        --specpath "build_spec" ^
+        --collect-all PyQt5 ^
+        main.py
 )
 
 REM Cleanup temp folders

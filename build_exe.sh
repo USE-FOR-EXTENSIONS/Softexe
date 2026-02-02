@@ -41,9 +41,10 @@ pyinstaller --noconfirm --onefile --windowed \
   --hidden-import=PyQt5.QtCore \
   --hidden-import=PyQt5.QtGui \
   --hidden-import=PyQt5.QtWidgets \
-  --add-data "data:data" \
-  --add-data "logs:logs" \
-  --add-data "reports:reports" \
+    --add-data "$(pwd)/config.py:." \
+    --add-data "$(pwd)/data:data" \
+    --add-data "$(pwd)/logs:logs" \
+    --add-data "$(pwd)/reports:reports" \
   --distpath "./build/dist" \
     --workpath "./build/build" \
   --specpath "./build" \

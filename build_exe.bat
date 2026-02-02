@@ -40,9 +40,10 @@ pyinstaller --noconfirm --onefile --windowed ^
   --hidden-import=PyQt5.QtCore ^
   --hidden-import=PyQt5.QtGui ^
   --hidden-import=PyQt5.QtWidgets ^
-  --add-data "data;data" ^
-  --add-data "logs;logs" ^
-  --add-data "reports;reports" ^
+  --add-data "%~dp0config.py;." ^
+  --add-data "%~dp0data;data" ^
+  --add-data "%~dp0logs;logs" ^
+  --add-data "%~dp0reports;reports" ^
   --distpath ".\build\dist" ^
     --workpath ".\build\build" ^
   --specpath ".\build" ^
@@ -59,9 +60,10 @@ if errorlevel 1 (
       --hidden-import=PyQt5.QtCore ^
       --hidden-import=PyQt5.QtGui ^
       --hidden-import=PyQt5.QtWidgets ^
-      --add-data "data;data" ^
-      --add-data "logs;logs" ^
-      --add-data "reports;reports" ^
+      --add-data "%~dp0config.py;." ^
+      --add-data "%~dp0data;data" ^
+      --add-data "%~dp0logs;logs" ^
+      --add-data "%~dp0reports;reports" ^
       --distpath ".\build\dist" ^
         --workpath ".\build\build" ^
       --specpath ".\build" ^
