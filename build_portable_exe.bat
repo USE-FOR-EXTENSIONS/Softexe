@@ -82,7 +82,7 @@ pyinstaller --noconfirm --onefile --windowed ^
   --add-data "logs;logs" ^
   --add-data "reports;reports" ^
   --distpath "dist" ^
-  --buildpath "build_temp" ^
+    --workpath "build_temp" ^
   --specpath "build_spec" ^
   --collect-all PyQt5 ^
   main.py
@@ -92,18 +92,18 @@ if errorlevel 1 (
     echo WARNING: One-file build attempt had issues, trying directory mode...
     echo.
     
-    pyinstaller --noconfirm --onedir --windowed ^
+        pyinstaller --noconfirm --onedir --windowed ^
       --name "TradeMirrorApp" ^
       --hidden-import=PyQt5.sip ^
       --hidden-import=PyQt5.QtCore ^
       --hidden-import=PyQt5.QtGui ^
       --hidden-import=PyQt5.QtWidgets ^
-      --add-data "config.py;." ^
+            --add-data "config.py;." ^
       --add-data "data;data" ^
       --add-data "logs;logs" ^
       --add-data "reports;reports" ^
       --distpath "dist" ^
-      --buildpath "build_temp" ^
+            --workpath "build_temp" ^
       --specpath "build_spec" ^
       --collect-all PyQt5 ^
       main.py

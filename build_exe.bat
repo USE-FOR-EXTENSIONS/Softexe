@@ -44,7 +44,7 @@ pyinstaller --noconfirm --onefile --windowed ^
   --add-data "logs;logs" ^
   --add-data "reports;reports" ^
   --distpath ".\build\dist" ^
-  --buildpath ".\build\build" ^
+    --workpath ".\build\build" ^
   --specpath ".\build" ^
   main.py
 
@@ -63,7 +63,7 @@ if errorlevel 1 (
       --add-data "logs;logs" ^
       --add-data "reports;reports" ^
       --distpath ".\build\dist" ^
-      --buildpath ".\build\build" ^
+        --workpath ".\build\build" ^
       --specpath ".\build" ^
       main.py
 )
